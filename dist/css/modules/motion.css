@@ -1,0 +1,18 @@
+:root{
+    --duration-01: 70ms;
+    --duration-02: 110ms;
+    --duration-03: 150ms;
+    --duration-04: 240ms;
+    --duration-05: 400ms;
+    --duration-06: 700ms;
+
+
+    --standard-productive: var(--duration-02) cubic-bezier(0.2, 0, 0.38, 0.9);
+    --standard-expressive: var(--duration-01) cubic-bezier(0.4, 0.14, 0.3, 1);
+
+    --entrance-productive: var(--duration-02) cubic-bezier(0, 0, 0.38, 0.9);
+    --entrance-expressive: var(--duration-01) cubic-bezier(0, 0, 0.3, 1);
+
+    --exit-productive: var(--duration-02) cubic-bezier(0.2, 0, 1, 0.9);
+    --exit-expressive: var(--duration-01) cubic-bezier(0.4, 0.14, 1, 1);
+}

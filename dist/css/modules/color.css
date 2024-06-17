@@ -1,0 +1,75 @@
+:root{
+    --color-neutral-00: #fafafa;
+    --color-neutral-01: #f5f5f5;
+    --color-neutral-02: #e5e5e5;
+    --color-neutral-03: #d4d4d4;
+    --color-neutral-04: #a3a3a3;
+    --color-neutral-05: #737373;
+    --color-neutral-06: #525252;
+    --color-neutral-07: #404040;
+    --color-neutral-08: #262626;
+    --color-neutral-09: #171717;
+    --color-neutral-10: #0a0a0a;
+
+    --color-primary-00: #f5f5f6;
+    --color-primary-01: #e5e5e8;
+    --color-primary-02: #ceced3;
+    --color-primary-03: #acadb4;
+    --color-primary-04: #83858d;
+    --color-primary-05: #686a72;
+    --color-primary-06: #595a61;
+    --color-primary-07: #4c4d52;
+    --color-primary-08: #434347;
+    --color-primary-09: #3b3b3e;
+    --color-primary-10: #0c0c0d;
+
+    /* https://en.wikipedia.org/wiki/Enhanced_Graphics_Adapter */
+    
+    --color-accent-00: #ebfffd;
+    --color-accent-01: #cdfffc;
+    --color-accent-02: #a1fffd;
+    --color-accent-03: #55ffff;
+    --color-accent-04: #1af3f6;
+    --color-accent-05: #00d6dc;
+    --color-accent-06: #01aab9;
+    --color-accent-07: #098795;
+    --color-accent-08: #116c79;
+    --color-accent-09: #135966;
+    --color-accent-10: #063b46;
+
+    --color-error-00: #fff1f1;
+    --color-error-01: #ffe1e1;
+    --color-error-02: #ffc7c7;
+    --color-error-03: #ffa0a0;
+    --color-error-04: #ff5555;
+    --color-error-05: #f83b3b;
+    --color-error-06: #e51d1d;
+    --color-error-07: #c11414;
+    --color-error-08: #a01414;
+    --color-error-09: #841818;
+    --color-error-10: #480707;
+    
+    --color-success-00: #e8ffe5;
+    --color-success-01: #cbffc7;
+    --color-success-02: #99ff95;
+    --color-success-03: #55ff55;
+    --color-success-04: #25f627;
+    --color-success-05: #05dd0c;
+    --color-success-06: #00b109;
+    --color-success-07: #05860e;
+    --color-success-08: #0b6912;
+    --color-success-09: #0e5916;
+    --color-success-10: #013207;
+
+    --color-warning-00: #fcfee8;
+    --color-warning-01: #faffc2;
+    --color-warning-02: #faff89;
+    --color-warning-03: #ffff55;
+    --color-warning-04: #fdf312;
+    --color-warning-05: #ecd906;
+    --color-warning-06: #ccab02;
+    --color-warning-07: #a37b05;
+    --color-warning-08: #86600d;
+    --color-warning-09: #724e11;
+    --color-warning-10: #432a05;
+}
