@@ -1,8 +1,9 @@
 <script lang="ts">
     export let href = "#";
+    export let target:"_self"|"_blank"|"_parent"|"_top" = "_self";
 </script>
 
-<a {href}>
+<a {href} {target}>
     <slot>LinkButton</slot>
 </a>
 
