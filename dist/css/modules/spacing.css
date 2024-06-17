@@ -1,4 +1,6 @@
 :root{
+    box-sizing: content-box;
+    
     --spacing-00: 0px;
     --spacing-01: 1px;
     --spacing-02: 2px;
@@ -34,4 +36,10 @@
     --spacing-32: 288px;
     --spacing-33: 320px;
     --spacing-34: 384px;
+    
+    --breakpoint-01: 640px;
+    --breakpoint-02: 768px;
+    --breakpoint-03: 1024px;
+    --breakpoint-04: 1280px;
+    --breakpoint-05: 1536px;
 }

@@ -1,4 +1,6 @@
 :root{
+    box-sizing: content-box;
+    
     --spacing-00: 0px;
     --spacing-01: 1px;
     --spacing-02: 2px;

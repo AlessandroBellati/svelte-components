@@ -72,4 +72,10 @@
     --color-warning-08: #86600d;
     --color-warning-09: #724e11;
     --color-warning-10: #432a05;
+
+    color: var(--color-neutral-10);
+}
+
+a:hover{
+    color: var(--color-neutral-09)
 }

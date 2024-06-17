@@ -2,6 +2,7 @@ import { SvelteComponent } from "svelte";
 declare const __propDef: {
     props: {
         href?: string | undefined;
+        target?: "_self" | "_blank" | "_parent" | "_top" | undefined;
     };
     events: {
         [evt: string]: CustomEvent<any>;
