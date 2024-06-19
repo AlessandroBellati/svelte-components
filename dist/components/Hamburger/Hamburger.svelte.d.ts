@@ -10,6 +10,12 @@ interface $$__sveltets_2_IsomorphicComponent<Props extends Record<string, any> =
     }): Exports;
     z_$$bindings?: Bindings;
 }
+/**
+ * Used to create a hamburger button for your application.
+ * ```svelte
+ * <Hamburger position="top-right" bind:open={variableToBind} />
+ * ```
+ */
 declare const Hamburger: $$__sveltets_2_IsomorphicComponent<{
     position?: HamburgerPosition | undefined;
     open: boolean;

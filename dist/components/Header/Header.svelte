@@ -1,6 +1,6 @@
 <script lang="ts">import { blur } from "svelte/transition";
 import { quintOut } from "svelte/easing";
-import { toggleHeader } from "./isMenuOpen.svelte.js";
+import { toggleHeader } from "./isHeaderOpen.svelte.js";
 import Hamburger from "../Hamburger/Hamburger.svelte";
 let { logo, links, action, hamburgerPosition } = $props();
 let headerToggler = toggleHeader();

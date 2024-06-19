@@ -1,1 +1,1 @@
-Hamburger position prop cascade on Header
+Doc Hamburger, Sidebar with native transition

@@ -103,3 +103,11 @@ function toggle() {
         }
     }
 </style>
+
+<!-- 
+@component
+Used to create a hamburger button for your application.
+```svelte
+<Hamburger position="top-right" bind:open={variableToBind} />
+```
+-->

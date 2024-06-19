@@ -1,10 +1,10 @@
 :root{
-    --duration-01: 70ms;
-    --duration-02: 110ms;
-    --duration-03: 150ms;
-    --duration-04: 240ms;
-    --duration-05: 400ms;
-    --duration-06: 700ms;
+    --duration-01: 200ms;
+    --duration-02: 300ms;
+    --duration-03: 400ms;
+    --duration-04: 500ms;
+    --duration-05: 700ms;
+    --duration-06: 1000ms;
 
 
     --standard-productive: var(--duration-02) cubic-bezier(0.2, 0, 0.38, 0.9);

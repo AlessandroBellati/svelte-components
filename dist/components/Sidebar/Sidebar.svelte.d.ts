@@ -3,18 +3,14 @@ interface $$__sveltets_2_IsomorphicComponent<Props extends Record<string, any> =
     new (options: import('svelte').ComponentConstructorOptions<Props>): import('svelte').SvelteComponent<Props, Events, Slots> & {
         $$bindings?: Bindings;
     } & Exports;
-    (internal: unknown, props: Props & {
+    (internal: unknown, props: {
         $$events?: Events;
         $$slots?: Slots;
     }): Exports;
     z_$$bindings?: Bindings;
 }
-declare const Sidebar: $$__sveltets_2_IsomorphicComponent<{
-    children?: ((this: void) => typeof import("svelte").SnippetReturn & {
-        _: "functions passed to {@render ...} tags must use the `Snippet` type imported from \"svelte\"";
-    }) | undefined;
-}, {
+declare const Sidebar: $$__sveltets_2_IsomorphicComponent<Record<string, never>, {
     [evt: string]: CustomEvent<any>;
-}, {}, Record<string, any>, "">;
+}, {}, Record<string, any>, string>;
 type Sidebar = InstanceType<typeof Sidebar>;
 export default Sidebar;
