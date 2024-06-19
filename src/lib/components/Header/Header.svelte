@@ -74,7 +74,7 @@
             display: flex;
             gap: var(--spacing-08);
         }
-        .mobile, button{
+        .mobile{
             display: none;
         }
     }
@@ -98,66 +98,6 @@
         display: flex;
         flex-direction: column;
         gap: var(--spacing-08);
-    }        
-
-    button {
-        align-items: center;
-        justify-content: center;
-        margin: 0;
-        overflow: hidden;
-        background-color: transparent;
-        border: none;
-        z-index: 10;
-
-        position: absolute;
-        right: var(--spacing-00);
-    }
-    .ham {
-        cursor: pointer;
-        -webkit-tap-highlight-color: transparent;
-        transition: transform 400ms;
-        -moz-user-select: none;
-        -webkit-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-    }
-    .hamRotate.active {
-        transform: rotate(45deg);
-        transition: all 1.2s cubic-bezier(0.86, 0, 0.07, 1);
-    }
-
-    .line {
-        fill: none;
-        stroke: var(--color-neutral-10);
-        stroke-width: 2;
-        transition: all 1.2s cubic-bezier(0.86, 0, 0.07, 1);
-    }
-
-    .ham8 .top {
-        stroke-dasharray: 40 160;
-    }
-    .ham8 .middle {
-        stroke-dasharray: 40 142;
-        transform-origin: 50%;
-        transition: all 1.2s cubic-bezier(0.86, 0, 0.07, 1);
-    }
-    .ham8 .bottom {
-        stroke-dasharray: 40 85;
-        transform-origin: 50%;
-        transition: all 1.2s cubic-bezier(0.86, 0, 0.07, 1);
-    }
-
-    .ham8.active .top {
-        stroke-dashoffset: -64px;
-        transition: all 1.2s cubic-bezier(0.86, 0, 0.07, 1);
-    }
-    .ham8.active .middle {
-        transform: rotate(90deg);
-        transition: all 1.2s cubic-bezier(0.86, 0, 0.07, 1);
-    }
-    .ham8.active .bottom {
-        stroke-dashoffset: -64px;
-        transition: all 1.2s cubic-bezier(0.86, 0, 0.07, 1);
     }
 </style>
 

@@ -1,12 +1,15 @@
 <script lang="ts">
-    let {open = $bindable(false)} = $props()
+    let { open = $bindable(false), position = "top-right" } = $props<{
+        position?: "top-right" | "bottom-right" | "bottom-left" | "top-left";
+        open: boolean;
+    }>();
 
-    function toggle(){
-        open = !open
+    function toggle() {
+        open = !open;
     }
 </script>
 
-<button onclick={toggle}>
+<button onclick={toggle} class={position}>
     <svg
         class="ham hamRotate ham8 {open ? 'active' : ''}"
         viewBox="0 0 100 100"
@@ -25,6 +28,20 @@
 </button>
 
 <style>
+    .top-right {
+        right: var(--spacing-00);
+    }
+    .bottom-right {
+        right: var(--spacing-00);
+        bottom: var(--spacing-00);
+    }
+    .bottom-left {
+        left: var(--spacing-00);
+        bottom: var(--spacing-00);
+    }
+    .top-left {
+        left: var(--spacing-00);
+    }
     button {
         align-items: center;
         justify-content: center;
@@ -35,7 +52,6 @@
         z-index: 10;
 
         position: absolute;
-        right: var(--spacing-00);
     }
     .ham {
         cursor: pointer;
@@ -83,5 +99,10 @@
     .ham8.active .bottom {
         stroke-dashoffset: -64px;
         transition: all 1.2s cubic-bezier(0.86, 0, 0.07, 1);
+    }
+    @media (min-width: 768px) {
+        button {
+            display: none;
+        }
     }
 </style>
