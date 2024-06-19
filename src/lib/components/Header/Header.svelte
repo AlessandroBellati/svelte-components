@@ -50,7 +50,50 @@
 </nav>
 {/if}
 
+<nav
+    class="desktop"
+>
+    <ul>
+        <li>
+            {@render logo()}
+        </li>
+        <li>
+            <ul>
+                {@render links()}
+            </ul>
+        </li>
+        <li>
+            {@render action()}
+        </li>
+    </ul>
+</nav>
+
 <style>
+    .desktop{
+        display: none;
+    }
+    @media (min-width: 768px){
+        .desktop{
+            display: block;
+            max-width: var(--breakpoint-04);
+            margin: auto;
+        }
+        .desktop>ul{
+            display: flex;
+            gap: var(--spacing-24);
+            align-items: center;
+            justify-content: space-between;
+            padding-inline: var(--spacing-10);
+        }
+        .desktop>ul>li>ul{
+            display: flex;
+            gap: var(--spacing-08);
+        }
+        .mobile, button{
+            display: none;
+        }
+    }
+
     .mobile{
         block-size: 100vh;
     }
@@ -80,6 +123,7 @@
         overflow: hidden;
         background-color: transparent;
         border: none;
+        z-index: 10;
 
         position: absolute;
         right: var(--spacing-00);

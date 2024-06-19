@@ -1,41 +1,20 @@
-import { SvelteComponent } from "svelte";
-declare const __propDef: {
-    props: Record<string, never>;
-    events: {
-        [evt: string]: CustomEvent<any>;
-    };
-    slots: {
-        logo: {};
-        links: {};
-        action: {};
-    };
-    exports?: {} | undefined;
-    bindings?: string | undefined;
-};
-export type HeaderProps = typeof __propDef.props;
-export type HeaderEvents = typeof __propDef.events;
-export type HeaderSlots = typeof __propDef.slots;
-/**
- * ```svelte
- * <Header>
- * <svelte:fragment slot="logo">
- *     <a href="/">
- *         <img src="/favicon.png" alt="svelte icon" width="48px"/>
- *     </a>
- * </svelte:fragment>
- *
- * <svelte:fragment slot="links">
- *     <HeaderListItem href="#">Link1</HeaderListItem>
- *     <HeaderListItem href="#">Link2</HeaderListItem>
- *     <HeaderListItem href="#">Link3</HeaderListItem>
- * </svelte:fragment>
- *
- * <svelte:fragment slot="action">
- *     <LinkButton></LinkButton>
- * </svelte:fragment>
- * </Header>
- * ```
- */
-export default class Header extends SvelteComponent<HeaderProps, HeaderEvents, HeaderSlots> {
+import type { Snippet } from "svelte";
+interface $$__sveltets_2_IsomorphicComponent<Props extends Record<string, any> = any, Events extends Record<string, any> = any, Slots extends Record<string, any> = any, Exports = {}, Bindings = string> {
+    new (options: import('svelte').ComponentConstructorOptions<Props>): import('svelte').SvelteComponent<Props, Events, Slots> & {
+        $$bindings?: Bindings;
+    } & Exports;
+    (internal: unknown, props: Props & {
+        $$events?: Events;
+        $$slots?: Slots;
+    }): Exports;
+    z_$$bindings?: Bindings;
 }
-export {};
+declare const Header: $$__sveltets_2_IsomorphicComponent<{
+    logo: Snippet;
+    links: Snippet;
+    action: Snippet;
+}, {
+    [evt: string]: CustomEvent<any>;
+}, {}, Record<string, any>, "">;
+type Header = InstanceType<typeof Header>;
+export default Header;

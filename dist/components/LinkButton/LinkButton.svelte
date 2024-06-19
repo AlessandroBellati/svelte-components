@@ -1,9 +1,12 @@
-<script>export let href = "#";
-export let target = "_self";
+<script lang="ts">let { href = "#", target = "_self", children } = $props();
 </script>
 
 <a {href} {target}>
-    <slot>LinkButton</slot>
+    {#if children}
+        {@render children()}
+    {:else}
+        LinkButton
+    {/if}
 </a>
 
 <style>

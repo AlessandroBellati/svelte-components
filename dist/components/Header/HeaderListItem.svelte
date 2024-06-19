@@ -1,8 +1,8 @@
-<script>export let href = "#";
+<script lang="ts">let { href = "#", children } = $props();
 </script>
 
 <li>
     <a {href}>
-        <slot></slot>
+        {@render children()}
     </a>
 </li>

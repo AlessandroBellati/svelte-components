@@ -1,20 +1,18 @@
-import { SvelteComponent } from "svelte";
-declare const __propDef: {
-    props: {
-        href?: string | undefined;
-    };
-    events: {
-        [evt: string]: CustomEvent<any>;
-    };
-    slots: {
-        default: {};
-    };
-    exports?: {} | undefined;
-    bindings?: string | undefined;
-};
-export type HeaderListItemProps = typeof __propDef.props;
-export type HeaderListItemEvents = typeof __propDef.events;
-export type HeaderListItemSlots = typeof __propDef.slots;
-export default class HeaderListItem extends SvelteComponent<HeaderListItemProps, HeaderListItemEvents, HeaderListItemSlots> {
+/// <reference types="svelte" />
+interface $$__sveltets_2_IsomorphicComponent<Props extends Record<string, any> = any, Events extends Record<string, any> = any, Slots extends Record<string, any> = any, Exports = {}, Bindings = string> {
+    new (options: import('svelte').ComponentConstructorOptions<Props>): import('svelte').SvelteComponent<Props, Events, Slots> & {
+        $$bindings?: Bindings;
+    } & Exports;
+    (internal: unknown, props: Props & {
+        $$events?: Events;
+        $$slots?: Slots;
+    }): Exports;
+    z_$$bindings?: Bindings;
 }
-export {};
+declare const HeaderListItem: $$__sveltets_2_IsomorphicComponent<{
+    href: string;
+}, {
+    [evt: string]: CustomEvent<any>;
+}, {}, Record<string, any>, "">;
+type HeaderListItem = InstanceType<typeof HeaderListItem>;
+export default HeaderListItem;

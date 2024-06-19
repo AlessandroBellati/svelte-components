@@ -1,12 +1,18 @@
-<script>import LinkButton from "../LinkButton/LinkButton.svelte";
-let isMenuOpen = false;
-function toggleMenu() {
-  isMenuOpen = !isMenuOpen;
-}
+<script lang="ts" context="module"></script>
+
+<script lang="ts">import { slide, blur } from "svelte/transition";
+import { quintOut } from "svelte/easing";
+import { toggleHeader } from "./isMenuOpen.svelte.js";
+let { logo, links, action } = $props();
+let headerToggler = toggleHeader();
 </script>
 
-<button on:click={toggleMenu}>
-    <svg class="ham hamRotate ham8 {isMenuOpen ? "active" : ""}" viewBox="0 0 100 100" width="64">
+<button onclick={headerToggler.toggle}>
+    <svg
+        class="ham hamRotate ham8 {headerToggler.isHeaderOpen ? 'active' : ''}"
+        viewBox="0 0 100 100"
+        width="64"
+    >
         <path
             class="line top"
             d="m 30,33 h 40 c 3.722839,0 7.5,3.126468 7.5,8.578427 0,5.451959 -2.727029,8.421573 -7.5,8.421573 h -20"
@@ -19,102 +25,50 @@ function toggleMenu() {
     </svg>
 </button>
 
-<nav class:isMenuOpen>
+{#if headerToggler.isHeaderOpen}
+<nav
+    class="mobile"
+    transition:blur={{ duration: 2000, easing: quintOut}}
+>
     <ul>
         <li>
-            <slot name="logo">
-                <a href="/">
-                    <img src="/favicon.png" alt="svelte icon" />
-                </a>
-            </slot>
+            {@render logo()}
         </li>
         <li>
             <ul>
-                <slot name="links"></slot>
+                {@render links()}
             </ul>
         </li>
         <li>
-            <slot name="action">
-                <LinkButton></LinkButton>
-            </slot>
+            {@render action()}
         </li>
     </ul>
 </nav>
-
-<!-- 
-@component
-```svelte
-<Header>
-    <svelte:fragment slot="logo">
-        <a href="/">
-            <img src="/favicon.png" alt="svelte icon" width="48px"/>
-        </a>
-    </svelte:fragment>
-
-    <svelte:fragment slot="links">
-        <HeaderListItem href="#">Link1</HeaderListItem>
-        <HeaderListItem href="#">Link2</HeaderListItem>
-        <HeaderListItem href="#">Link3</HeaderListItem>
-    </svelte:fragment>
-    
-    <svelte:fragment slot="action">
-        <LinkButton></LinkButton>
-    </svelte:fragment>
-</Header>
-```
--->
+{/if}
 
 <style>
-    .isMenuOpen {
-        display: block;
+    .mobile{
+        block-size: 100vh;
     }
-    nav {
-        margin: auto;
-        max-inline-size: 1536px;
-        padding-inline: var(--spacing-11);
-    }
-    nav > ul {
+    .mobile>ul{
         display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: var(--spacing-05);
+        flex-direction: column;
+        gap: var(--spacing-24);
+        align-items: end;
+        padding-inline-end: var(--spacing-10);
     }
-    li > ul {
+    .mobile>ul>li:first-child{
+        align-self: flex-start;
+        padding-block-start: var(--spacing-06);
+        padding-inline-start: var(--spacing-06);
+    }
+    .mobile>ul>li>ul{
         display: flex;
-        gap: var(--spacing-09);
-        flex-wrap: wrap;
-    }
-    img {
-        width: var(--spacing-16);
-    }
-    @media (max-width: 768px) {
-        nav > ul {
-            flex-direction: column;
-            gap: var(--spacing-19);
-            align-items: end;
-            margin-block: 0;
-            padding-block-start: var(--spacing-09);
-        }
-        li > ul {
-            flex-direction: column;
-            gap: var(--spacing-05);
-        }
-        nav > ul > li:first-child {
-            align-self: flex-start;
-        }
-        nav > ul > li:last-child {
-            padding-block-start: var(--spacing-16);
-        }
-        nav {
-            height: 100vh;
-            display: none;
-        }
-    }
-    @media (min-width: 768px) {
-        button{
-            display: none;
-        }
-    }
+        flex-direction: column;
+        gap: var(--spacing-08);
+    }        
+
+    /* hamburger */
     button {
         align-items: center;
         justify-content: center;
