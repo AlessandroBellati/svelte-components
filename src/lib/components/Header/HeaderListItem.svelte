@@ -1,5 +1,6 @@
 <script lang="ts">
-    let {href = "#", children} = $props<{href:string}>()
+    import type { Snippet } from "svelte";
+    let {href = "#", children} = $props<{href:string, children:Snippet}>()
 </script>
 
 <li>

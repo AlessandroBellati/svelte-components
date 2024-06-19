@@ -1,5 +1,6 @@
 <script lang="ts">
-    let {href = "#", target = "_self", children} = $props<{href?:string, target?:"_self"|"_blank"|"_parent"|"_top"}>();
+    import type { Snippet } from "svelte";
+    let {href = "#", target = "_self", children} = $props<{href?:string, target?:"_self"|"_blank"|"_parent"|"_top", children: Snippet}>();
 </script>
 
 <a {href} {target}>

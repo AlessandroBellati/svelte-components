@@ -1,33 +1,18 @@
-<script lang="ts" context="module">
-    import type { Snippet } from "svelte";
-</script>
-
 <script lang="ts">
-    import { slide, blur } from "svelte/transition";
+    import type { Snippet } from "svelte";
+
+    import { blur } from "svelte/transition";
     import { quintOut } from "svelte/easing";
     import { toggleHeader } from "./isMenuOpen.svelte.js";
 
+    import Hamburger from "$lib/components/Hamburger/Hamburger.svelte";
+
     let {logo, links, action} = $props<{logo: Snippet, links: Snippet, action: Snippet}>()
+    
     let headerToggler = toggleHeader()
 </script>
 
-<button onclick={headerToggler.toggle}>
-    <svg
-        class="ham hamRotate ham8 {headerToggler.isHeaderOpen ? 'active' : ''}"
-        viewBox="0 0 100 100"
-        width="64"
-    >
-        <path
-            class="line top"
-            d="m 30,33 h 40 c 3.722839,0 7.5,3.126468 7.5,8.578427 0,5.451959 -2.727029,8.421573 -7.5,8.421573 h -20"
-        />
-        <path class="line middle" d="m 30,50 h 40" />
-        <path
-            class="line bottom"
-            d="m 70,67 h -40 c 0,0 -7.5,-0.802118 -7.5,-8.365747 0,-7.563629 7.5,-8.634253 7.5,-8.634253 h 20"
-        />
-    </svg>
-</button>
+<Hamburger bind:open={headerToggler.isHeaderOpen} />
 
 {#if headerToggler.isHeaderOpen}
 <nav
@@ -115,7 +100,6 @@
         gap: var(--spacing-08);
     }        
 
-    /* hamburger */
     button {
         align-items: center;
         justify-content: center;
@@ -176,3 +160,23 @@
         transition: all 1.2s cubic-bezier(0.86, 0, 0.07, 1);
     }
 </style>
+
+<!--
+@component
+Used to create a header for your application. It includes a logo, navigation links, and an action button.
+```
+<Header>
+    {#snippet logo()}
+        <img src="/favicon.png" alt="" width="48px">
+    {/snippet}
+    {#snippet links()}
+        <HeaderListItem href="#">Link 1</HeaderListItem>
+        <HeaderListItem href="#">Link 2</HeaderListItem>
+        <HeaderListItem href="#">Link 3</HeaderListItem>
+    {/snippet}
+    {#snippet action()}
+        <LinkButton href="#">LinkButton</LinkButton>
+    {/snippet}
+</Header>
+```
+-->
