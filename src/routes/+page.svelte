@@ -4,20 +4,17 @@
     import LinkButton from "$lib/components/LinkButton/LinkButton.svelte";
 </script>
 
-<Header>
-    <svelte:fragment slot="logo">
-        <a href="/">
-            <img src="/favicon.png" alt="svelte icon" width="48px"/>
-        </a>
-    </svelte:fragment>
-
-    <svelte:fragment slot="links">
-        <HeaderListItem href="#">Link1</HeaderListItem>
-        <HeaderListItem href="#">Link2</HeaderListItem>
-        <HeaderListItem href="#">Link3</HeaderListItem>
-    </svelte:fragment>
-    
-    <svelte:fragment slot="action">
+<Header >
+    {#snippet logo()}
+        <img src="/favicon.png" alt="" width="48px">
+    {/snippet}
+    {#snippet links()}
+    <HeaderListItem href="#">Link 1</HeaderListItem>
+    <HeaderListItem href="#">Link 2</HeaderListItem>
+    <HeaderListItem href="#">Link 3</HeaderListItem>
+    {/snippet}
+    {#snippet action()}
         <LinkButton></LinkButton>
-    </svelte:fragment>
+    {/snippet}
 </Header>
+

@@ -15,3 +15,8 @@ npm install https://github.com/AlessandroBellati/svelte-components
 
 <slot></slot>
 ``` 
+## Svelte 5
+To update to the new alpha version of Svelte 5 run the following command:
+```bash
+npm install --save-dev svelte@next
+```

@@ -1,10 +1,13 @@
 <script lang="ts">
-    export let href = "#";
-    export let target:"_self"|"_blank"|"_parent"|"_top" = "_self";
+    let {href = "#", target = "_self", children} = $props<{href?:string, target?:"_self"|"_blank"|"_parent"|"_top"}>();
 </script>
 
 <a {href} {target}>
-    <slot>LinkButton</slot>
+    {#if children}
+        {@render children()}
+    {:else}
+        LinkButton
+    {/if}
 </a>
 
 <style>

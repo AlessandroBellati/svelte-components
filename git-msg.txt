@@ -1,1 +1,2 @@
-Design Tokens
+Migration Svelte-5 alpha
+Slot to snippet migration.

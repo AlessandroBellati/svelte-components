@@ -1,9 +1,9 @@
 <script lang="ts">
-    export let href = "#"
+    let {href = "#", children} = $props<{href:string}>()
 </script>
 
 <li>
     <a {href}>
-        <slot></slot>
+        {@render children()}
     </a>
 </li>
