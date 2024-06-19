@@ -1,5 +1,6 @@
 <script lang="ts">
     import type { Snippet } from "svelte";
+    import type { HamburgerPosition } from "$lib/components/Hamburger/Hamburger.svelte";
 
     import { blur } from "svelte/transition";
     import { quintOut } from "svelte/easing";
@@ -7,12 +8,12 @@
 
     import Hamburger from "$lib/components/Hamburger/Hamburger.svelte";
 
-    let {logo, links, action} = $props<{logo: Snippet, links: Snippet, action: Snippet}>()
+    let {logo, links, action, hamburgerPosition} = $props<{logo: Snippet, links: Snippet, action: Snippet, hamburgerPosition?: HamburgerPosition}>()
     
     let headerToggler = toggleHeader()
 </script>
 
-<Hamburger bind:open={headerToggler.isHeaderOpen} />
+<Hamburger position={hamburgerPosition} bind:open={headerToggler.isHeaderOpen} />
 
 {#if headerToggler.isHeaderOpen}
 <nav

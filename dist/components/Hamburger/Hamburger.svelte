@@ -1,20 +1,9 @@
-<script lang="ts" context="module">
-    export type HamburgerPosition =
-        | "top-right"
-        | "bottom-right"
-        | "bottom-left"
-        | "top-left";
-</script>
+<script lang="ts" context="module"></script>
 
-<script lang="ts">
-    let { open = $bindable(false), position = "top-right" } = $props<{
-        position?: HamburgerPosition;
-        open: boolean;
-    }>();
-
-    function toggle() {
-        open = !open;
-    }
+<script lang="ts">let { open = $bindable(false), position = "top-right" } = $props();
+function toggle() {
+  open = !open;
+}
 </script>
 
 <button onclick={toggle} class={position}>

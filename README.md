@@ -1,5 +1,5 @@
 # svelte-components
-Set of Svelte components.
+Simple set of Svelte components to rapidly build web applications.
 
 ## Installation
 ```bash
